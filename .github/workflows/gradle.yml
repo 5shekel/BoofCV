@@ -44,13 +44,15 @@ jobs:
       with:
         name: test-reports
         path: |
-          build/reports/tests/test
-          build/test-results/test
+          **/build/reports/tests/test/**
+          **/build/test-results/test/**
+        if-no-files-found: warn
     - name: Upload Build Artifacts
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: build-artifacts
         path: |
-          build/libs/*.jar
-          build/distributions/*
+          **/build/libs/*.jar
+          **/build/distributions/*
+        if-no-files-found: warn
