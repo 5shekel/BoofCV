@@ -5,10 +5,11 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches: [ SNAPSHOT ]
+    branches: ['*']
   pull_request:
-    branches: [ SNAPSHOT ]
-
+    branches: ['*']
+  workflow_dispatch:
+ 
 jobs:
   build:
 
